@@ -4,6 +4,7 @@ import { Router } from "@angular/router";
 import { NgForm } from '@angular/forms';
 import { LoginModel } from '../../interface/login.model';
 import { AuthenticatedResponse } from '../../interface/authenticated-response.model';
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent implements OnInit {
   }
   login = ( form: NgForm) => {
     if (form.valid) {
-      this.http.post<AuthenticatedResponse>("http://localhost:4300/api/auth/login", this.credentials, {
+      this.http.post<AuthenticatedResponse>(environment.api.baseUrl + "auth/login", this.credentials, {
         headers: new HttpHeaders({ "Content-Type": "application/json"})
       })
       .subscribe({
