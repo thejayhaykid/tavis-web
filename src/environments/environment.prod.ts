@@ -3,9 +3,9 @@
 export const environment = {
   production: false,
   api: {
-    domain: 'localhost:4300',
-    base: 'http://localhost:4300/',
-    baseUrl: 'http://localhost:4300/api/',
-    token: 'http://localhost:4300/api/token/refresh'
+    domain: 'asg-tavis.herokuapp.com',
+    base: 'https://asg-tavis.herokuapp.com/',
+    baseUrl: 'https://asg-tavis.herokuapp.com/api/',
+    token: 'https://asg-tavis.herokuapp.com/api/token/refresh'
   }
 };
