@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { RandomGamesDialog } from './dialogs/random-games/random-games-dialog';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -28,7 +29,8 @@ export function tokenGetter() {
     HomeComponent,
     SyncManagerComponent,
     BcmAdminComponent,
-    RandomGamesDialog
+    RandomGamesDialog,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
