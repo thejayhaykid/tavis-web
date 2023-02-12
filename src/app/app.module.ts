@@ -17,6 +17,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { RandomGamesDialog } from './dialogs/random-games/random-games-dialog';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { ContestsComponent } from './components/contests/contests.component';
+import { ClickOutsideDirective } from './directives/clickOutside/click-outside.directive';
+import { ProfileComponent } from './components/profile/profile.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { RegisterComponent } from './components/register/register.component';
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -30,7 +35,12 @@ export function tokenGetter() {
     SyncManagerComponent,
     BcmAdminComponent,
     RandomGamesDialog,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ContestsComponent,
+    ClickOutsideDirective,
+    ProfileComponent,
+    ForgotPasswordComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

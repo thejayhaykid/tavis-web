@@ -54,6 +54,14 @@ export class TavisService {
     return this.http.get(baseUrl + `bcm/unique14chars`);
   }
 
+  getAvailableRegions(): Observable<any> {
+    return this.http.get(baseUrl + `user/availableRegions`);
+  }
+
+  getAvailableAreas(): Observable<any> {
+    return this.http.get(baseUrl + `user/availableAreas`);
+  }
+
   create(data: any): Observable<any> {
     return this.http.post(baseUrl, data);
   }

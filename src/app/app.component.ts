@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
@@ -7,13 +7,29 @@ import { JwtHelperService } from '@auth0/angular-jwt';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Tavis';
+  hideProfileMenu = true;
+  hideMobileMenu = true;
+  showRegisterButton = true;
 
   constructor(
     private jwtHelper: JwtHelperService,
     private router: Router
-  ) { }
+  ) { 
+    this.router.events.subscribe((ev) => {
+      if (ev instanceof NavigationEnd) { 
+        if (location.href.indexOf('register') !== -1)
+          this.showRegisterButton = false;
+        else
+          this.showRegisterButton = true;
+      }
+    });
+  }
+
+  ngOnInit(): void {
+    
+  }
 
   isUserAuthenticated = (): boolean => {
     const token = localStorage.getItem("jwt");
@@ -26,6 +42,14 @@ export class AppComponent {
   logOut = () => {
     localStorage.removeItem("jwt");
     localStorage.removeItem("refreshToken");
-    this.router.navigate(["/login"]);
+    this.router.navigate(["/home"]);
+  }
+
+  toggleProfileMenu = () => {
+    this.hideProfileMenu = !this.hideProfileMenu;
+  }
+
+  toggleMobileMenu = () => {
+    this.hideMobileMenu = !this.hideMobileMenu; 
   }
 }
