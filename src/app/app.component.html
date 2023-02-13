@@ -3,7 +3,7 @@
     <div class="relative flex h-16 items-center justify-between">
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <!-- Mobile menu button-->
-        <button type="button" aria-controls="mobile-menu" [attr.aria-expanded]="!hideMobileMenu" (click)="toggleMobileMenu()"
+        <button type="button" aria-controls="mobile-menu" [attr.aria-expanded]="!hideMobileMenu" (click)="toggleMobileMenu()" (clickOutside)="hideMobileMenu = true"
           class="inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-green-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
           <span class="sr-only">Open main menu</span>
           <!--
@@ -74,7 +74,10 @@
             <button type="button" [attr.aria-expanded]="hideProfileMenu" aria-haspopup="true" (click)="toggleProfileMenu()"
               class="flex rounded-full bg-green-800 text-sm focus:outline-none focus:ring-2  focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button">
               <span class="sr-only">Open user menu</span>
-              <img class="h-8 w-8 rounded-full" src="../assets/no-login_robot.png" alt="">
+              <img *ngIf="isUserAuthenticated()" class="h-8 w-8 rounded-full" src="../assets/no-login_robot.png" alt="">
+              <div *ngIf="!isUserAuthenticated()" class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+                <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+              </div>
             </button>
           </div>
 

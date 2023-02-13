@@ -58,8 +58,8 @@ export class TavisService {
     return this.http.get(baseUrl + `user/availableRegions`);
   }
 
-  getAvailableAreas(): Observable<any> {
-    return this.http.get(baseUrl + `user/availableAreas`);
+  getAvailableAreas(region: string): Observable<any> {
+    return this.http.get(baseUrl + `user/availableAreas?selectedRegion=` + region);
   }
 
   create(data: any): Observable<any> {

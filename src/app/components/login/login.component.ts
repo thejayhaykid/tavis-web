@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
     if (rememberedLogin != null) {
       this.previouslyRemembered = true;
       this.credentials.username = rememberedLogin;
+      this.rememberMe = true;
     }
       
   }

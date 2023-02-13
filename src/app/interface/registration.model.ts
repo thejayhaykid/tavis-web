@@ -1,9 +1,6 @@
-export interface RegistrationModel {
-  username: string;
-  usernameConfirm: string;
-  password: string;
-  passwordConfirm: string;
-  gamertag: string;
-  region: string;
-  area: string;
+import { AccountRegistrationModel } from "./account-registration.model";
+import { PersonalRegistrationModel } from "./personal-registration.model";
+
+export interface RegistrationModel extends PersonalRegistrationModel, AccountRegistrationModel {
+
 }
