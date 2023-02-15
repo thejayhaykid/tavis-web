@@ -26,8 +26,7 @@
       </div>
       <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
         <div class="flex flex-shrink-0 items-center">
-          <img class="block h-8 w-auto lg:hidden" src="../assets/logo.png" alt="Tavis">
-          <img class="hidden h-8 w-auto lg:block" src="../assets/logo.png" alt="Tavis">
+          <!-- TODO: Tavis Logo?? -->
         </div>
         <div class="hidden sm:ml-6 sm:block">
           <div class="flex space-x-4">
@@ -60,7 +59,7 @@
           Register?
         </button>
         
-        <button type="button" class="rounded-full bg-green-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+        <button *ngIf="isUserAuthenticated()" type="button" class="rounded-full bg-green-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
           <span class="sr-only">View notifications</span>
           <!-- Heroicon name: outline/bell -->
           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -75,7 +74,7 @@
               class="flex rounded-full bg-green-800 text-sm focus:outline-none focus:ring-2  focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button">
               <span class="sr-only">Open user menu</span>
               <img *ngIf="isUserAuthenticated()" class="h-8 w-8 rounded-full" src="../assets/no-login_robot.png" alt="">
-              <div *ngIf="!isUserAuthenticated()" class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+              <div *ngIf="!isUserAuthenticated()" class="relative w-8 h-8 overflow-hidden rounded-full bg-gray-600">
                 <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
               </div>
             </button>
@@ -93,7 +92,7 @@
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu" [ngClass]="{'hidden': hideMobileMenu}">
+  <div class="sm:hidden flex flex-col" id="mobile-menu" [ngClass]="{'hidden': hideMobileMenu}">
     <div class="space-y-1 px-2 pt-2 pb-3">
         <a href="#" routerLink="home" routerLinkActive="bg-green-900 text-white"
         class="text-gray-300 hover:bg-green-700 block hover:text-white px-3 py-2 rounded-md text-sm font-medium" 
@@ -116,7 +115,7 @@
         Sync Manager
       </a>
 
-      <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded"
+      <button class="bg-red-500 block mx-auto mt-10 hover:bg-red-700 text-white font-bold py-2 px-4 border border-red-700 rounded"
         *ngIf="!isUserAuthenticated() && showRegisterButton" routerLink="register">
         Register?
       </button>

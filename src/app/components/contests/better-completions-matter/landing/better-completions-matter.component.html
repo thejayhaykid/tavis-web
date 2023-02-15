@@ -1,0 +1,27 @@
+<h4 class="text-2xl text-white mb-3">Better Completions Matter</h4>
+<h6 class="text-lg text-white mb-3">Contestants</h6>
+<ul class="max-w-md divide-y divide-gray-700">
+  <li class="p-1 sm:p-2 hover:bg-slate-500 hover:cursor-pointer transition-all" *ngFor="let player of playerList; let i = index"
+      [routerLink]="['/contests/better-completions-matter/bcm-player', player.id]">
+     <div class="flex items-center space-x-4">
+        <div class="flex-shrink-0">
+          <div class="relative w-8 h-8 overflow-hidden rounded-full bg-gray-600">
+            <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+        <div class="flex-1 min-w-0">
+           <p class="text-sm font-mediumtruncate text-white">
+              {{player.name}}
+           </p>
+           <p *ngIf="player.region" class="text-sm truncate text-gray-500">
+              {{player.region}} <span *ngIf="player.region && player.area">-</span> {{player.area}} 
+           </p>
+        </div>
+        <div class="inline-flex items-center text-base font-semibold text-white">
+           {{i+1 | ordinal}}
+        </div>
+     </div>
+  </li>
+</ul>

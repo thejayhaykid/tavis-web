@@ -22,6 +22,9 @@ import { ClickOutsideDirective } from './directives/clickOutside/click-outside.d
 import { ProfileComponent } from './components/profile/profile.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { RegisterComponent } from './components/register/register.component';
+import { BetterCompletionsMatterComponent } from './components/contests/better-completions-matter/landing/better-completions-matter.component';
+import { OrdinalPipe } from './pipes/ordinal.pipe';
+import { BcmPlayerComponent } from './components/contests/better-completions-matter/bcm-player/bcm-player.component';
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -40,7 +43,10 @@ export function tokenGetter() {
     ClickOutsideDirective,
     ProfileComponent,
     ForgotPasswordComponent,
-    RegisterComponent
+    RegisterComponent,
+    BetterCompletionsMatterComponent,
+    OrdinalPipe,
+    BcmPlayerComponent
   ],
   imports: [
     BrowserModule,
