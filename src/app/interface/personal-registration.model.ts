@@ -1,4 +1,5 @@
 export interface PersonalRegistrationModel {
   region: '',
-  area: ''
+  area: '',
+  discord: ''
 }

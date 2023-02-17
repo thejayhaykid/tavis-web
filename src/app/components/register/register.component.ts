@@ -37,7 +37,8 @@ export class RegisterComponent implements OnInit {
     password_confirm:'',
     gamertag:'',
     region: '',
-    area: ''
+    area: '',
+    discord: ''
   }
 
   accountInfo: AccountRegistrationModel = {
@@ -50,7 +51,8 @@ export class RegisterComponent implements OnInit {
 
   personalInfo: PersonalRegistrationModel = {
     region: '',
-    area: ''
+    area: '',
+    discord: ''
   }
 
   constructor(private tavisService: TavisService) { }
@@ -77,6 +79,7 @@ export class RegisterComponent implements OnInit {
       // hydrate the full registration form
       this.registration.region = this.personalInfo.region;
       this.registration.area = this.personalInfo.area;
+      this.registration.discord = this.personalInfo.discord;
 
       this.personalInfoSubmitted = true;
     }
