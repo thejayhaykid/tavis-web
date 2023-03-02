@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BcmPlayer } from 'src/models/bcm-player';
 import { BcmAdminComponent } from './components/bcm-admin/bcm-admin.component';
+import { BcmLeaderboardComponent } from './components/contests/better-completions-matter/bcm-leaderboard/bcm-leaderboard.component';
 import { BcmPlayerComponent } from './components/contests/better-completions-matter/bcm-player/bcm-player.component';
 import { BetterCompletionsMatterComponent } from './components/contests/better-completions-matter/landing/better-completions-matter.component';
 import { ContestsComponent } from './components/contests/contests.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'contests', component: ContestsComponent },
     { path: 'contests/better-completions-matter', component: BetterCompletionsMatterComponent },
-      { path: 'contests/better-completions-matter/bcm-player/:id', component: BcmPlayerComponent },
+      { path: 'contests/better-completions-matter/player/:id', component: BcmPlayerComponent },
+      { path: 'contests/better-completions-matter/leaderboard', component: BcmLeaderboardComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },

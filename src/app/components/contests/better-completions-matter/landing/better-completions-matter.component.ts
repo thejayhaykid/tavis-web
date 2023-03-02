@@ -10,12 +10,10 @@ import { BcmPlayer } from 'src/models/bcm-player';
 export class BetterCompletionsMatterComponent implements OnInit {
   playerList: any = null;
 
-  constructor(private bcmService: BcmService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.bcmService.getBcmPlayerList().subscribe(data => {
-      this.playerList = data;
-    })
+    
   }
 
 }

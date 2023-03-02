@@ -1,0 +1,129 @@
+<nav class="flex mb-5" aria-label="Breadcrumb">
+  <ol class="inline-flex items-center space-x-1 md:space-x-3">
+    <li class="inline-flex items-center">
+      <a href="#" routerLink="/contests"
+        class="inline-flex items-center text-sm font-medium text-gray-400 hover:text-white">
+        <svg aria-hidden="true" class="w-4 h-4 mr-2 mt-1" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89A33.076 33.076 0 0 1 2.5.5zm.099 2.54a2 2 0 0 0 .72 3.935c-.333-1.05-.588-2.346-.72-3.935zm10.083 3.935a2 2 0 0 0 .72-3.935c-.133 1.59-.388 2.885-.72 3.935zM3.504 1c.007.517.026 1.006.056 1.469.13 2.028.457 3.546.87 4.667C5.294 9.48 6.484 10 7 10a.5.5 0 0 1 .5.5v2.61a1 1 0 0 1-.757.97l-1.426.356a.5.5 0 0 0-.179.085L4.5 15h7l-.638-.479a.501.501 0 0 0-.18-.085l-1.425-.356a1 1 0 0 1-.757-.97V10.5A.5.5 0 0 1 9 10c.516 0 1.706-.52 2.57-2.864.413-1.12.74-2.64.87-4.667.03-.463.049-.952.056-1.469H3.504z" />
+        </svg>
+        Contest Hub
+      </a>
+    </li>
+    <li>
+      <div class="flex items-center">
+        <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <a href="#" routerLink="/contests/better-completions-matter"
+          class="ml-1 text-sm font-medium md:ml-2 text-gray-400 hover:text-white">Better Completions Matter</a>
+      </div>
+    </li>
+    <li>
+      <div class="flex items-center">
+        <svg aria-hidden="true" class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd"
+            d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+            clip-rule="evenodd"></path>
+        </svg>
+        <a href="#" routerLink="/contests/better-completions-matter/leaderboard"
+          class="ml-1 text-sm font-medium md:ml-2 text-gray-400 hover:text-white">Leaderboard</a>
+      </div>
+    </li>
+  </ol>
+</nav>
+
+
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <table class="w-full text-sm text-left text-gray-400">
+    <caption class="p-5 text-lg font-semibold text-left text-white bg-gray-800">
+      Better Completions Matter 2024 <span class="font-thin text-sm text-gray-500">(Last Updated: {{lastScan | date:'short':'UTC'}})</span>
+      <p class="mt-1 text-sm font-normal text-gray-400">
+        This leaderboard updates automatically at the beginning of each month, defaulting users in descending order of Total Points
+      </p>
+    </caption>
+    <thead class="text-xs uppercase bg-gray-700 text-gray-400">
+      <tr>
+        <th scope="col" class="p-2 sm:p-4">
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3">
+          Player
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3 text-center hidden sm:table-cell">
+          Completions
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3 text-center hidden lg:table-cell">
+          Avg Ratio
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3 text-center hidden lg:table-cell">
+          Highest Ratio
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3 text-center hidden lg:table-cell">
+          Avg Time
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3 text-center hidden lg:table-cell">
+          Highest Time
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3 text-center hidden md:table-cell">
+          Avg BCM Points
+        </th>
+        <th scope="col" class="px-4 py-2 sm:px-6 sm:py-3 text-center">
+          BCM Base Points
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let position of leaderboard;"
+        [routerLink]="['/contests/better-completions-matter/player/', position.player.id]"
+        class="border-b bg-gray-800 border-gray-700 hover:bg-gray-600 hover:cursor-pointer">
+        <td class="w-1 p-1 sm:w-2 sm:p-2">
+          <span *ngIf="position.bcmStats.rank == 1" class="text-yellow-400 font-bold text-lg">{{position.bcmStats.rank | ordinal}}</span>
+          <span *ngIf="position.bcmStats.rank == 2" class="text-slate-500 font-bold text-lg">{{position.bcmStats.rank | ordinal}}</span>
+          <span *ngIf="position.bcmStats.rank == 3" class="text-amber-800 font-bold text-lg">{{position.bcmStats.rank | ordinal}}</span>
+          <span *ngIf="position.bcmStats.rank != 1 && position.bcmStats.rank != 2 && position.bcmStats.rank != 3">{{position.bcmStats.rank | ordinal}}</span>
+        </td>
+        <th scope="row" class="flex items-center px-1 py-4 whitespace-nowrap text-white">
+          <svg class="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd">
+            </path>
+          </svg>
+          <div class="pl-2 sm:pl-3">
+            <div class="font-normal sm:font-semibold">{{position.player.name}}</div>
+            <div class="hidden sm:block text-xs font-normal text-gray-500">
+              {{position.player.region || '--'}}
+              <span *ngIf="!!position.player.area">-</span>
+              {{position.player.area}}
+            </div>
+          </div>
+        </th>
+        <td class="px-2 py-2 text-center hidden sm:table-cell">
+          {{position.bcmStats.completions}}
+        </td>
+        <td class="px-2 py-2 text-center hidden lg:table-cell">
+          {{position.bcmStats.averageRatio | number: '1.3-3'}}
+        </td>
+        <td class="px-2 py-2 text-center hidden lg:table-cell">
+          {{position.bcmStats.highestRatio | number: '1.3-3'}}
+        </td>
+        <td class="px-2 py-2 text-center hidden lg:table-cell">
+          {{position.bcmStats.averageTimeEstimate | number: '1.0-1'}}
+        </td>
+        <td class="px-2 py-2 text-center hidden lg:table-cell">
+          {{position.bcmStats.highestTimeEstimate | number: '1.0-1'}}
+        </td>
+        <td class="px-2 py-2 text-center hidden md:table-cell">
+          {{position.bcmStats.averagePoints | number: '1.0-1'}}
+        </td>
+        <td class="px-2 py-2 text-center">
+          {{position.bcmStats.basePoints | number:'0.0-0' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -25,6 +25,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { BetterCompletionsMatterComponent } from './components/contests/better-completions-matter/landing/better-completions-matter.component';
 import { OrdinalPipe } from './pipes/ordinal.pipe';
 import { BcmPlayerComponent } from './components/contests/better-completions-matter/bcm-player/bcm-player.component';
+import { BcmLeaderboardComponent } from './components/contests/better-completions-matter/bcm-leaderboard/bcm-leaderboard.component';
 
 export function tokenGetter() { 
   return localStorage.getItem("jwt"); 
@@ -46,7 +47,8 @@ export function tokenGetter() {
     RegisterComponent,
     BetterCompletionsMatterComponent,
     OrdinalPipe,
-    BcmPlayerComponent
+    BcmPlayerComponent,
+    BcmLeaderboardComponent
   ],
   imports: [
     BrowserModule,

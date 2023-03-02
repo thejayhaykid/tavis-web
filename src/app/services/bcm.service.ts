@@ -14,8 +14,8 @@ export class BcmService {
 
   constructor(private http: HttpClient) { }
 
-  getBcmPlayerList(): Observable<any> {
-    return this.http.get(baseUrl + `bcm/getBcmPlayerList`);
+  getBcmLeaderboardList(): Observable<any> {
+    return this.http.get(baseUrl + `bcm/getBcmLeaderboardList`);
   }
 
   getBcmPlayer(id: number): Observable<any> {
