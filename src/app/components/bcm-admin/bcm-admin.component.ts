@@ -42,4 +42,10 @@ export class BcmAdminComponent implements OnInit {
       console.log(data);
     })
   }
+
+  recalcBcmLeaderboard() {
+    this.tavisService?.recalcBcmLeaderboard().subscribe(data => {
+      console.log(data);
+    });
+  }
 }

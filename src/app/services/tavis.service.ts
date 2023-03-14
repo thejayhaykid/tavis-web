@@ -50,6 +50,10 @@ export class TavisService {
     return this.http.get(baseUrl + `bcm/produceCompletedGamesReport`);
   }
 
+  recalcBcmLeaderboard(): Observable<any> {
+    return this.http.get(baseUrl + `bcm/recalcBcmLeaderboard`);
+  }
+
   unique14chars(): Observable<any> {
     return this.http.get(baseUrl + `bcm/unique14chars`);
   }
