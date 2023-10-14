@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BcmPlayer } from 'src/models/bcm-player';
-import { BcmAdminComponent } from './components/bcm-admin/bcm-admin.component';
-import { BcmLeaderboardComponent } from './components/contests/better-completions-matter/bcm-leaderboard/bcm-leaderboard.component';
-import { BcmPlayerComponent } from './components/contests/better-completions-matter/bcm-player/bcm-player.component';
-import { BetterCompletionsMatterComponent } from './components/contests/better-completions-matter/landing/better-completions-matter.component';
-import { ContestsComponent } from './components/contests/contests.component';
+import { BcmAdminComponent } from './components/admin/bcm-admin.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
+import { PlayerComponent } from './components/player/player.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
@@ -19,20 +16,21 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signin', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'contests', component: ContestsComponent },
-    { path: 'contests/better-completions-matter', component: BetterCompletionsMatterComponent },
-      { path: 'contests/better-completions-matter/player/:id', component: BcmPlayerComponent },
-      { path: 'contests/better-completions-matter/leaderboard', component: BcmLeaderboardComponent },
+  { path: 'leaderboard', component: LeaderboardComponent },
+  {
+    path: 'player/:id',
+    component: PlayerComponent,
+  },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'profile', component: ProfileComponent },
   { path: 'sync', component: SyncManagerComponent, canActivate: [AuthGuard] },
   { path: 'bcm-admin', component: BcmAdminComponent, canActivate: [AuthGuard] },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

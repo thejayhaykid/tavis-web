@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "heroku-postbuild": "ng build"
+    "lint": "ng lint"
   },
   "engines": {
     "node": "18.14.0",
@@ -25,6 +25,7 @@
     "@angular/material": "^14.2.2",
     "@angular/platform-browser": "^14.2.3",
     "@angular/platform-browser-dynamic": "^14.2.3",
+    "@angular/pwa": "^0.5.3",
     "@angular/router": "^14.2.3",
     "@auth0/angular-jwt": "^5.0.2",
     "@microsoft/signalr": "^6.0.9",
@@ -40,9 +41,17 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.3",
+    "@angular-eslint/builder": "14.4.0",
+    "@angular-eslint/eslint-plugin": "14.4.0",
+    "@angular-eslint/eslint-plugin-template": "14.4.0",
+    "@angular-eslint/schematics": "14.4.0",
+    "@angular-eslint/template-parser": "14.4.0",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.43.0",
+    "@typescript-eslint/parser": "5.43.0",
     "enhanced-resolve": "^3.3.0",
+    "eslint": "^8.28.0",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",

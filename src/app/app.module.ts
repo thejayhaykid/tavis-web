@@ -10,25 +10,23 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HomeComponent } from './components/home/home.component';
 import { SyncManagerComponent } from './components/sync-manager/sync-manager.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { BcmAdminComponent } from './components/bcm-admin/bcm-admin.component';
+import { BcmAdminComponent } from './components/admin/bcm-admin.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonModule } from '@angular/common';
 import { RandomGamesDialog } from './dialogs/random-games/random-games-dialog';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
-import { ContestsComponent } from './components/contests/contests.component';
 import { ClickOutsideDirective } from './directives/clickOutside/click-outside.directive';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { RegisterComponent } from './components/register/register.component';
-import { BetterCompletionsMatterComponent } from './components/contests/better-completions-matter/landing/better-completions-matter.component';
 import { OrdinalPipe } from './pipes/ordinal.pipe';
-import { BcmPlayerComponent } from './components/contests/better-completions-matter/bcm-player/bcm-player.component';
-import { BcmLeaderboardComponent } from './components/contests/better-completions-matter/bcm-leaderboard/bcm-leaderboard.component';
+import { PlayerComponent } from './components/player/player.component';
+import { LeaderboardComponent } from './components/leaderboard/leaderboard.component';
 
-export function tokenGetter() { 
-  return localStorage.getItem("jwt"); 
+export function tokenGetter() {
+  return localStorage.getItem('jwt');
 }
 
 @NgModule({
@@ -40,15 +38,13 @@ export function tokenGetter() {
     BcmAdminComponent,
     RandomGamesDialog,
     PageNotFoundComponent,
-    ContestsComponent,
     ClickOutsideDirective,
     ProfileComponent,
     ForgotPasswordComponent,
     RegisterComponent,
-    BetterCompletionsMatterComponent,
     OrdinalPipe,
-    BcmPlayerComponent,
-    BcmLeaderboardComponent
+    PlayerComponent,
+    LeaderboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,11 +61,11 @@ export function tokenGetter() {
       config: {
         tokenGetter: tokenGetter,
         allowedDomains: [environment.api.domain],
-        disallowedRoutes: []
-      }
-    })
+        disallowedRoutes: [],
+      },
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

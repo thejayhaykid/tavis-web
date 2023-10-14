@@ -22,4 +22,7 @@ export class BcmService {
     return this.http.get(baseUrl + `bcm/getBcmPlayer?playerId=` + id);
   }
 
+  getBcmRgsc(id: number): Observable<any> {
+    return this.http.get(baseUrl + `bcm/rgscStats?playerId=` + id);
+  }
 }

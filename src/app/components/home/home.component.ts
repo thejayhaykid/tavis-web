@@ -7,10 +7,8 @@ import { Player } from 'src/models/player';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-
   constructor(tavisService: TavisService) {
     this.tavisService = tavisService;
   }
@@ -19,6 +17,5 @@ export class HomeComponent implements OnInit {
   players: Player[] = [];
   completedGames: Game[] = [];
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 }

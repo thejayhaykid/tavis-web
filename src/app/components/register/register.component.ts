@@ -10,8 +10,7 @@ import { FadeInOut } from '../animation.component';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss'],
-  animations: [FadeInOut(200, 300, true)]
+  animations: [FadeInOut(200, 300, true)],
 })
 export class RegisterComponent implements OnInit {
   invalidLogin: boolean | undefined;
@@ -31,31 +30,31 @@ export class RegisterComponent implements OnInit {
   regionSelected: boolean = false;
 
   registration: RegistrationModel = {
-    username:'', 
-    username_confirm:'',
-    password:'',
-    password_confirm:'',
-    gamertag:'',
+    username: '',
+    username_confirm: '',
+    password: '',
+    password_confirm: '',
+    gamertag: '',
     region: '',
     area: '',
-    discord: ''
-  }
+    discord: '',
+  };
 
   accountInfo: AccountRegistrationModel = {
-    username:'', 
-    username_confirm:'',
-    password:'',
-    password_confirm:'',
-    gamertag:''
-  }
+    username: '',
+    username_confirm: '',
+    password: '',
+    password_confirm: '',
+    gamertag: '',
+  };
 
   personalInfo: PersonalRegistrationModel = {
     region: '',
     area: '',
-    discord: ''
-  }
+    discord: '',
+  };
 
-  constructor(private tavisService: TavisService) { }
+  constructor(private tavisService: TavisService) {}
 
   ngOnInit(): void {
     this.getAvailableRegions();
@@ -69,10 +68,8 @@ export class RegisterComponent implements OnInit {
       this.registration.gamertag = this.accountInfo.gamertag;
 
       this.accountInfoSubmitted = true;
-    }
-    else
-      alert('something broke');
-  }
+    } else alert('something broke');
+  };
 
   registerInfo = (form: NgForm) => {
     if (form.valid) {
@@ -82,29 +79,27 @@ export class RegisterComponent implements OnInit {
       this.registration.discord = this.personalInfo.discord;
 
       this.personalInfoSubmitted = true;
-    }
-    else
-      alert('something broke');
-  }
+    } else alert('something broke');
+  };
 
   getAvailableRegions = () => {
-    this.tavisService?.getAvailableRegions().subscribe(data => {
+    this.tavisService?.getAvailableRegions().subscribe((data) => {
       this.regions = data;
-    })
-  }
+    });
+  };
 
   onRegionSelect = (region: string) => {
-    this.tavisService?.getAvailableAreas(region).subscribe(data => {
+    this.tavisService?.getAvailableAreas(region).subscribe((data) => {
       this.areas = data;
       this.regionSelected = true;
-    })
-  }
+    });
+  };
 
   toggleRegionSearchDropdown = () => {
     this.hideRegionSearchDropdown = !this.hideRegionSearchDropdown;
-  }
+  };
 
   submitRegistration = () => {
     console.log(this.registration);
-  }
+  };
 }
