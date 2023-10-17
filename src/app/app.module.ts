@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HomeComponent } from './components/home/home.component';
 import { SyncManagerComponent } from './components/sync-manager/sync-manager.component';
@@ -32,7 +32,7 @@ export function tokenGetter() {
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
+    SigninComponent,
     HomeComponent,
     SyncManagerComponent,
     BcmAdminComponent,

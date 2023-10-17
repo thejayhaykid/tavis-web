@@ -5,7 +5,7 @@ import { LeaderboardComponent } from './components/leaderboard/leaderboard.compo
 import { PlayerComponent } from './components/player/player.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
+import { SigninComponent } from './components/signin/signin.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -14,7 +14,7 @@ import { AuthGuard } from './guards/auth.guards';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'signin', component: LoginComponent },
+  { path: 'signin', component: SigninComponent },
   { path: 'home', component: HomeComponent },
   { path: 'leaderboard', component: LeaderboardComponent },
   {

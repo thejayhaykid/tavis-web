@@ -11,10 +11,10 @@ import { AuthenticatedResponse } from '../../interface/authenticated-response.mo
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
+  selector: 'app-signin',
+  templateUrl: './signin.component.html',
 })
-export class LoginComponent implements OnInit {
+export class SigninComponent implements OnInit {
   discordSignin: string = '';
   invalidLogin: boolean | undefined;
   rememberMe: boolean = false;
@@ -62,6 +62,11 @@ export class LoginComponent implements OnInit {
           error: (err: HttpErrorResponse) => (this.invalidLogin = true),
         });
     }
+  };
+
+  connect = () => {
+    window.location.href =
+      'https://xbl.io/app/auth/eb9ab783-e41f-d428-0319-fb2d4d4a0d71';
   };
 
   rememberMeToggle = () => {
