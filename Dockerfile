@@ -23,4 +23,4 @@ RUN ng build
 EXPOSE 80
 
 # Define the command to start your application
-CMD ["ng", "s", "--host", "0.0.0.0", "--port", "80"]
+CMD ["ng", "s", "--host", "0.0.0.0"]
