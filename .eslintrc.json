@@ -1,9 +1,42 @@
 {
+  "parser": "@typescript-eslint/parser",
   "extends": [
-    "airbnb",
-    "airbnb-typescript"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "airbnb"
   ],
+  "plugins": [
+    "@typescript-eslint",
+    "react"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
   "parserOptions": {
     "project": "./tsconfig.json"
-  }
+  },
+  "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/prefer-default-export": "off",
+    "import/extensions": "off",
+    "import/no-unresolved": "off",
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".tsx"
+        ]
+      }
+    ]
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "build/",
+    "dist/",
+    "src/serviceWorker.ts",
+    "src/react-app-env.d.ts",
+    "**/*.config.*",
+    "**/*.test.*"
+  ]
 }

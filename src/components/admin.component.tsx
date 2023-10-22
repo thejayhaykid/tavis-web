@@ -1,44 +1,47 @@
-const Admin = () => {
-  const verifyRandomGameEligibility = () => {
-    // this.tavisService?.verifyRandomGameEligibility().subscribe((data) => {
-    //   this.dialog.open(RandomGamesDialog, {
-    //     data: data,
-    //     height: "80%",
-    //     width: "50%",
-    //   });
-    // });
-  };
+import React from 'react';
 
-  const produceBcmReport = () => {
-    // this.tavisService?.produceBcmReport().subscribe((data) => {
-    //   console.log(data);
-    // });
-  };
+function Admin() {
+  // const verifyRandomGameEligibility = () => {
+  //   // this.tavisService?.verifyRandomGameEligibility().subscribe((data) => {
+  //   //   this.dialog.open(RandomGamesDialog, {
+  //   //     data: data,
+  //   //     height: "80%",
+  //   //     width: "50%",
+  //   //   });
+  //   // });
+  // };
 
-  const produceStatReport = () => {
-    // this.tavisService?.produceStatReport().subscribe((data) => {
-    //   console.log(data);
-    // });
-  };
+  // const produceBcmReport = () => {
+  //   // this.tavisService?.produceBcmReport().subscribe((data) => {
+  //   //   console.log(data);
+  //   // });
+  // };
 
-  const produceCompletedGamesReport = () => {
-    // this.tavisService?.produceCompletedGamesReport().subscribe((data) => {
-    //   console.log(data);
-    // });
-  };
+  // const produceStatReport = () => {
+  //   // this.tavisService?.produceStatReport().subscribe((data) => {
+  //   //   console.log(data);
+  //   // });
+  // };
 
-  const recalcBcmLeaderboard = () => {
-    // this.tavisService?.recalcBcmLeaderboard().subscribe((data) => {
-    //   console.log(data);
-    // });
-  };
+  // const produceCompletedGamesReport = () => {
+  //   // this.tavisService?.produceCompletedGamesReport().subscribe((data) => {
+  //   //   console.log(data);
+  //   // });
+  // };
+
+  // const recalcBcmLeaderboard = () => {
+  //   // this.tavisService?.recalcBcmLeaderboard().subscribe((data) => {
+  //   //   console.log(data);
+  //   // });
+  // };
+
   return (
     <>
-      <button type="button" onClick={verifyRandomGameEligibility}>
+      {/* <button type="button" onClick={verifyRandomGameEligibility}>
         Generate Random Games
-      </button>
+      </button> */}
       <br />
-      <button type="button" onClick={produceStatReport}>
+      {/* <button type="button" onClick={produceStatReport}>
         Produce Stat Report
       </button>
       <br />
@@ -52,8 +55,10 @@ const Admin = () => {
       <br />
       <button type="button" onClick={recalcBcmLeaderboard}>
         Recalc Bcm Leaderboard
-      </button>
+      </button> */}
       <br />
     </>
   );
-};
+}
+
+export default Admin;

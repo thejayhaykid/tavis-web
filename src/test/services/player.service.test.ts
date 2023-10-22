@@ -15,7 +15,7 @@ describe('getCompletedGames', () => {
     const playerId = 123;
     await getCompletedGames(playerId);
     expect(global.fetch).toHaveBeenCalledWith(
-      'http://localhost:4300/api/player/getCompletedGames?playerId=123'
+      'http://localhost:4300/api/player/getCompletedGames?playerId=123',
     );
   });
 

@@ -21,7 +21,7 @@ describe('BCM Service', () => {
       const { baseUrl } = environment.api;
       await getBcmLeaderboardList();
       expect(global.fetch).toHaveBeenCalledWith(
-        `${baseUrl}bcm/getBcmLeaderboardList`
+        `${baseUrl}bcm/getBcmLeaderboardList`,
       );
     });
 
@@ -37,7 +37,7 @@ describe('BCM Service', () => {
       const playerId = 123;
       await getBcmPlayer(playerId);
       expect(global.fetch).toHaveBeenCalledWith(
-        `${baseUrl}bcm/getBcmPlayer?playerId=${playerId}`
+        `${baseUrl}bcm/getBcmPlayer?playerId=${playerId}`,
       );
     });
 
@@ -54,7 +54,7 @@ describe('BCM Service', () => {
       const playerId = 123;
       await getBcmRgsc(playerId);
       expect(global.fetch).toHaveBeenCalledWith(
-        `${baseUrl}bcm/rgscStats?playerId=${playerId}`
+        `${baseUrl}bcm/rgscStats?playerId=${playerId}`,
       );
     });
 
