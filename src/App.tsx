@@ -14,7 +14,7 @@ import {
   NotFound,
 } from './pages';
 
-function App() {
+const App = () => {
   const router = createBrowserRouter([
     { path: '/', element: <Home /> },
     { path: '/signin', element: <Login /> },
@@ -37,6 +37,6 @@ function App() {
       <RouterProvider router={router} />
     </div>
   );
-}
+};
 
 export default App;

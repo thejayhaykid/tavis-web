@@ -6,7 +6,7 @@ interface PlayerParams {
   [key: string]: string | undefined;
 }
 
-function Player() {
+const Player = () => {
   const { id } = useParams<PlayerParams>();
 
   if (!id) {
@@ -19,6 +19,6 @@ function Player() {
       {id}
     </div>
   );
-}
+};
 
 export default Player;
