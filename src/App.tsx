@@ -20,10 +20,7 @@ const App = () => {
     { path: '/signin', element: <Login /> },
     { path: '/home', element: <Home /> },
     { path: '/leaderboard', element: <Leaderboard /> },
-    {
-      path: '/player/:id',
-      element: <Player />,
-    },
+    { path: '/player/:id', element: <Player /> },
     { path: '/player', element: <Player /> },
     { path: '/forgot-password', element: <ForgotPassword /> },
     { path: '/register', element: <Register /> },
