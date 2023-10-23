@@ -30,7 +30,7 @@ const App = () => {
     { path: '/profile', element: <Profile /> },
     { path: '/sync', element: <SyncManager /> },
     { path: '/bcm-admin', element: <Admin /> },
-    { path: '**', element: <NotFound /> },
+    { path: '/*', element: <NotFound /> },
   ]);
   return (
     <div className="App">
