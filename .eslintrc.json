@@ -21,6 +21,10 @@
     "import/prefer-default-export": "off",
     "import/extensions": "off",
     "import/no-unresolved": "off",
+    "operator-linebreak": [
+      "error",
+      "after"
+    ],
     "react/jsx-filename-extension": [
       1,
       {
